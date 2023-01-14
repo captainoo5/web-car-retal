@@ -1,0 +1,52 @@
+<div class="container">
+  <span class="header">Stripe Your card</span>
+</div>
+
+
+<div class="container">
+
+          <form name="carForm" class="form-wrapper" [formGroup] ="payForm">
+            <div class="grid-1">
+                <div class="split">
+                  <div class="name">Card Holder*</div>
+                       <mat-form-field class="field" appearance="outline">
+                          <input type="text" formControlName="text" placeholder="Enter Name" matInput required=""/>
+                      </mat-form-field>
+                </div>
+
+                <div class="split">
+                      <div class="name">Card Number* </div>
+                      <mat-form-field class="field" appearance="outline">
+                          <input type="text" formControlName="number" placeholder="Enter Card Number" matInput required=""/>
+                      </mat-form-field>
+                </div>
+
+             </div>
+             <div class="grid">
+              <div class="split">
+                <div class="name">Expiration month And year*</div>
+                     <mat-form-field class="field" appearance="outline">
+                        <input type="text" formControlName="name" placeholder="Enter Date" matInput required=""/>
+                    </mat-form-field>
+              </div>
+
+              <div class="split">
+                    <div class="name">CVC*</div>
+                    <mat-form-field class="field" appearance="outline">
+                        <input type="text" formControlName="model" placeholder="Enter CVC" matInput required=""/>
+                    </mat-form-field>
+              </div>
+
+           </div>
+
+           <div>
+            <button class="btn">Process Payment</button>
+           </div>
+          </form>
+      <!-- </mat-card-content> -->
+  <!-- </mat-card> -->
+</div>
+
+
+
+

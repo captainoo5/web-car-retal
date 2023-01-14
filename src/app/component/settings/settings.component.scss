@@ -1,0 +1,52 @@
+.container-wrap{
+    background-color: white;
+    height: 100vh;
+}
+
+.form{
+    padding: 20px;
+}
+.top-btn{
+    width: 226px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+ 
+}
+.btn1{
+    margin-bottom: 5px;
+    width: 45%;
+    border: 1px solid #ccc;
+   background-color: #048d5f;
+   color: white;
+    
+}
+.btn2{
+    margin-bottom: 5px;
+    width: 45%;
+    border: 1px solid #ccc;
+   background-color:crimson;
+   color: white;
+    
+}
+.top-img{
+    padding: 10px;
+    width: 12%;
+    height: 18vh;
+    border-radius: 50%;
+}
+.img-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+
+.field{
+    width: 300px;
+}
+.form-container{
+    display: flex;
+    justify-content: center;
+    
+}

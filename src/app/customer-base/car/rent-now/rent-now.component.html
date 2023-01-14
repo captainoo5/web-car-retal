@@ -1,0 +1,60 @@
+<div class="container-wrapper">
+            <div>
+              <span class="text">Rent Here</span>
+            </div>
+            <div class="btn" *ngIf="this.data != ''">
+                <button mat-icon-button color="warn" (click)="return()" >
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+
+</div>
+            <form name="carForm" class="form-wrapper" [formGroup] ="rentForm">
+              <div class="grid">
+                  <div class="split">
+                    <span class="name">License Number</span> <br>
+                         <mat-form-field class="field" appearance="outline">
+                            <input type="text" formControlName="vehicle" placeholder="License Number" matInput required=""/>
+                        </mat-form-field>
+                  </div>
+
+                  <div class="split">
+                        <div class="name">Car Details </div>
+                        <mat-form-field class="field" appearance="outline">
+                            <input type="text" formControlName="car" placeholder="Enter Car Details" matInput required=""/>
+                        </mat-form-field>
+                  </div>
+               </div>
+               <div class="date">
+                  <div class="date-wrap">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Choose pick up date</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="pickup-date">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+
+                    <div class="date-wrap">
+                     <mat-form-field appearance="outline">
+                       <mat-label>Choose return date</mat-label>
+                          <input matInput [matDatepicker]="picker2" formControlName="end-date" (dateChange)="calculatecost()">
+                          <mat-hint>MM/DD/YYYY</mat-hint>
+                          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+               </div>
+               <div  id="output">
+               <p class="output">Total Amount:{{price}}</p>
+               </div>
+               <div class="btn-wrap">
+                <button class="last-btn" (click)="paynow('')" >Rent now</button>
+             </div>
+
+            </form>
+
+
+
+

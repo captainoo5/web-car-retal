@@ -1,0 +1,39 @@
+.header {
+    font-size: 20px;
+    padding-bottom: 5px;
+    font-weight: 500;
+    border-bottom: 1px solid  #048d5f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.border{
+    border: 1px solid #dee2e6 !important;
+    margin: 10px 0px;
+}
+.field{
+    width: 100%;
+    // border: 1px solid #ccc;
+    // border-radius: 4px;s
+}
+
+.btn{
+    background-color: #048d5f;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+}  
+.grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}  
+
+.split{
+    width: 47%;
+}
+
+.form-wrapper{
+    margin-top: 10px;
+}

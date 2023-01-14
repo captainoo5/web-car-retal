@@ -1,0 +1,55 @@
+.container-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    border-bottom: 1px solid  #048d5f;
+    padding-bottom: 5px;
+}
+.last-btn{
+    color: green;
+    background-color:hsl(123deg 90% 50% / 22%) ;
+    cursor: pointer;
+    display: flex;
+    float: left;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.btn-wrap{
+    padding: 10px;
+}
+ .date{
+    display: flex;
+    justify-content: space-between;
+     align-items: center;
+     text-align: left;
+    width: 90%;
+ }
+ .grid{
+     display: flex;
+     justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    width: 90%;
+ }
+.text{
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.output{
+  // color: red;
+  margin-left: 5px;
+  background-color: rgb(224 129 129 / 25%);
+  border: 1px solid #ccc;
+  width:25% ;
+  text-decoration: red;
+  border-radius: 4px;
+}
+// .date-wrap{
+//   width: 40%;
+// }

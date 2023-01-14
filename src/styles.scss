@@ -1,0 +1,96 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$car-rental-brand: (
+  50: #ffffff,
+  100: #dde6f3,
+  200: #b4c9e4,
+  300: #7fa3d1,
+  400: #6992c9,
+  500: #5282c1,
+  600: #4072b4,
+  700: #38649d,
+  800: #305687,
+  900: #284770,
+  A100: #ffffff,
+  A200: #dde6f3,
+  A400: #6992c9,
+  A700: #007d53,
+  // #44b137,
+  // #17223e,
+  contrast: (500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A700: white, )
+);
+
+$car-rental-accent: (
+  50: #ffffff,
+  100: #dde6f3,
+  200: #b4c9e4,
+  300: #7fa3d1,
+  400: #6992c9,
+  500: #5282c1,
+  600: #4072b4,
+  700: #38649d,
+  800: #305687,
+  900: #8948fc,
+  // #ebba16,
+  A100: #ffffff,
+  A200: #dde6f3,
+  A400: #6992c9,
+  A700: orange,
+  contrast: (500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A700: white, )
+);
+
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$car-rental-primary: mat.define-palette($car-rental-brand, A700);
+$car-rental-accent: mat.define-palette($car-rental-accent, A700);
+
+// The warn palette is optional (defaults to red).
+$car-rental-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$car-rental-theme: mat.define-light-theme((
+  color: (
+    primary: $car-rental-primary,
+    accent: $car-rental-accent,
+    warn: $car-rental-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($car-rental-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/////////////////////////////////
+/// 
+/// 
+/// 
+/// 
+/// 

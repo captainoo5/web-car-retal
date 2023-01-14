@@ -1,0 +1,56 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav class="side-nav" mode="side" opened>
+
+    <div class="logo-wrap"><img class="logo" src="assets/img/logo4.png" alt=""></div>
+
+    <div>
+        <div class="top-bar">
+            <div routerLink="/customer-base/dashboard" routerLinkActive="active" class="drop-down">
+              <mat-icon>dashboard</mat-icon>
+              &nbsp;
+             <a>Dashboard</a>
+           </div>
+           <div class="border">
+
+           </div>
+         </div>
+         <div class="center-bar">
+            <div routerLink="/customer-base/car" routerLinkActive="active" class="drop-down">
+              <mat-icon>car_rental</mat-icon>
+              &nbsp;
+             <a>Cars</a>
+            </div>
+            <div routerLink="/customer-base/payment" routerLinkActive="active" class="drop-down">
+              <mat-icon>payment</mat-icon>
+              &nbsp;
+             <a>Payments</a>
+            </div>
+
+
+            <div routerLink="/customer-base/paynow" routerLinkActive="active" >
+
+            </div>
+
+          </div>
+          <div class="last-bar">
+            <div class="border">
+
+            </div>
+
+            <div (click)="logout()" class="logout">
+              <mat-icon>logout</mat-icon>
+              &nbsp;
+             <a >Log Out</a>
+            </div>
+          </div>
+    </div>
+
+  </mat-sidenav>
+
+<div class="">
+
+</div>
+<router-outlet></router-outlet>
+</mat-sidenav-container>
+
+

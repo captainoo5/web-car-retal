@@ -1,0 +1,93 @@
+<div class="container">
+    <!-- <mat-Userd> -->
+        <!-- <mat-Userd-content> -->
+            <div *ngIf="this.selectedRow == ''" class="header">
+                <div>Add User</div>
+                <button mat-icon-button color="warn" (click)="close()" >
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+
+            <div *ngIf="this.selectedRow != ''" class="header">
+                <div>Edit User</div>
+                <button mat-icon-button color="warn" (click)="close()" >
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+            <form name="UserForm" class="form-wrapper" [formGroup] ="UserForm">
+            <div class="grid">
+
+                <div class="split">
+                    <div class="name">Name </div>
+                    <mat-form-field class="field" appearance="outline">
+                        <input type="text" formControlName="name" placeholder="Enter Name" matInput required=""/>
+                    </mat-form-field>
+              </div>
+
+
+             <div class="split">
+               <div class="name">Driver Name</div>
+                <mat-form-field class="drop-wraper" style="width:100% ;" appearance="outline">
+                    <mat-select >
+                      <mat-option value="Faulty">Admin</mat-option>
+                      <mat-option value="Reserved">Driver</mat-option>
+                    </mat-select>
+                </mat-form-field>
+             </div>
+
+            </div>
+
+            <div class="grid">
+
+
+                  <div class="split">
+                        <div class="name">Email </div>
+                        <mat-form-field class="field" appearance="outline">
+                            <input type="text" formControlName="email" placeholder="Enter Email" matInput required=""/>
+                        </mat-form-field>
+                  </div>
+             <div class="split">
+                  <div class="name">Phone Number</div>
+                       <mat-form-field class="field" appearance="outline">
+                          <input type="text" formControlName="number" placeholder="Enter Number" matInput required=""/>
+                      </mat-form-field>
+                </div>
+             </div>
+
+             <div class="grid">
+                <div class="split">
+                    <div class="name">License Number</div>
+                    <mat-form-field class="field" appearance="outline">
+                        <input type="text" formControlName="plate" placeholder="Enter Plate" matInput required=""/>
+                    </mat-form-field>
+                </div>
+
+
+                <div class="split">
+                   <div class="name">Password</div>
+                       <mat-form-field class="field" appearance="outline">
+                          <input type="text" formControlName="car" placeholder="Enter Cars " matInput required=""/>
+                      </mat-form-field>
+                   </div>
+             </div>
+
+             <div class="split">
+                <div class="name">Status</div>
+                <mat-form-field class="field" appearance="outline">
+                    <input type="text" formControlName="status" placeholder="Change Status" matInput required=""/>
+                </mat-form-field>
+             </div>
+
+             <div *ngIf="this.selectedRow == ''">
+                <button class="btn" (click)="addCar()" [disabled]="UserForm.invalid"
+                mat-flat-button >Save</button>
+            </div>
+
+            <div *ngIf="this.selectedRow != ''">
+                <button class="btn" (click)="editCar()" [disabled]="UserForm.invalid"
+                mat-flat-button >Save</button>
+            </div>
+        </form>
+    <!-- </mat-Userd-content> -->
+<!-- </mat-Userd> -->
+</div>

@@ -1,0 +1,36 @@
+
+<div class="container">
+    <div>
+        <img class="logo-wrap" width="80px" src="assets/img/logo4.png" alt="">
+     </div>
+     <mat-card>
+        <mat-card-content>
+            <div class="header">
+                <h2>Login</h2>
+            </div>
+            <form name="loginForm" [formGroup] ="loginForm">
+                <div class="name">
+                    Email <br>
+                    <mat-form-field class="field" appearance="outline">
+                        <input formControlName="email" placeholder="Enter email" matInput required=""/>
+                    </mat-form-field>
+                </div>
+                <div>
+                    password <br>
+                    <mat-form-field class="field" appearance="outline">
+                        <input formControlName="password" placeholder="Enter password" matInput [type]="hide? 'password' : 'text'" required>
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria.label]="'Hide password'" [attr.aria.press]="'hide'">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+            <div >
+                <button class="btn" [disabled]="loginForm.invalid"
+                mat-flat-button (click)="login()" >Login</button>
+            </div>
+                <div class="last-wrap">Don`t have an account? <span class="last-link" (click)="signUp()">Register here </span></div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+

@@ -1,0 +1,79 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav class="side-nav" mode="side" opened>
+      <div class="logo-wrap"><img class="logo" src="assets/img/logo4.png" alt="">admin</div>
+
+    <div  class="drop-wrap">
+      <div class="top-bar">
+         <div routerLink="/app/dashboard" routerLinkActive="active" class="drop-down">
+           <mat-icon>dashboard</mat-icon>
+           &nbsp;
+          <a>Dashboard</a>
+        </div>
+        <div class="border">
+
+        </div>
+      </div> 
+      <div class="center-bar"> 
+        <div routerLink="/app/cars" routerLinkActive="active" class="drop-down">
+          <mat-icon>car_rental</mat-icon>
+          &nbsp;
+         <a>Cars</a>  
+        </div>
+        <div routerLink="/app/payment" routerLinkActive="active" class="drop-down">
+          <mat-icon>payment</mat-icon>
+          &nbsp;
+         <a>Payments</a>  
+        </div>
+        <div routerLink="/app/status" routerLinkActive="active" class="drop-down">
+          <mat-icon>people</mat-icon>
+          &nbsp;
+         <a >Rental History</a>  
+        </div>
+
+        <div routerLink="/app/user-management" routerLinkActive="active" class="drop-down">
+          <mat-icon>engineering</mat-icon>
+          &nbsp;
+         <a >User MGT....</a>  
+        </div>        
+      </div> 
+     <div class="last-bar">
+        <div class="border">
+
+        </div>
+        <div routerLink="/app/settings" routerLinkActive="active" class="setting">
+          <mat-icon>settings</mat-icon>
+          &nbsp;
+         <a > Settings </a>
+        </div>
+        <div (click)="logout()" class="logout" class="logout">
+          <mat-icon>logout</mat-icon>
+          &nbsp;
+         <a >Log Out</a> 
+        </div>
+      </div>  
+    </div>
+    </mat-sidenav>
+
+    <div>
+        <nav class="Navbar" navbar-expand-lg navbar-dark bg-dark>
+        
+            <div class="navbar-collapes" >
+                
+                    <div class="nav-item">
+                        <!-- <a href="nav-link" routerLink="#" routerLinkActive="active">Home</a> -->
+                    </div>
+            
+                  <div class="nav-link " >
+                     <a class="nav-link ">
+                    <mat-icon>notifications</mat-icon>
+                  </a></div> &nbsp; &nbsp;
+                  <div class="user-name">Muhammad Tahir</div> &nbsp; &nbsp;
+                  <div class="img-bar"> 
+                    <img class="top-img" src="assets/img/pic.jpg" alt="">
+                  </div>
+        
+            </div>
+        </nav>
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-container>

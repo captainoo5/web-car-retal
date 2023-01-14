@@ -1,0 +1,101 @@
+<div class="container">
+    <!-- <mat-card> -->
+        <!-- <mat-card-content> -->
+            <div *ngIf="this.selectedRow == ''" class="header">
+                <div>Add Car</div>
+                <button mat-icon-button color="warn" (click)="close()" >
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+
+            <div *ngIf="this.selectedRow != ''" class="header">
+                <div>Edit Car</div>
+                <button mat-icon-button color="warn" (click)="close()" >
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+            <form name="carForm" class="form-wrapper" [formGroup] ="carForm">
+              <div class="grid">
+                  <div class="split">
+                    <div class="name">License Number</div>
+                         <mat-form-field class="field" appearance="outline">
+                            <input type="text" formControlName="number" placeholder="License Number" matInput required=""/>
+                        </mat-form-field>
+                  </div>
+
+                  <div class="split">
+                        <div class="name">Year </div>
+                        <mat-form-field class="field" appearance="outline">
+                            <input type="text" formControlName="year" placeholder="Enter Year" matInput required=""/>
+                        </mat-form-field>
+                  </div>
+
+               </div>
+               <div class="grid">
+                <div class="split">
+                  <div class="name">Driver</div>
+                       <mat-form-field class="field" appearance="outline">
+                          <input type="text" formControlName="name" placeholder="Enter Name" matInput required=""/>
+                      </mat-form-field>
+                </div>
+
+                <div class="split">
+                      <div class="name">Model</div>
+                      <mat-form-field class="field" appearance="outline">
+                          <input type="text" formControlName="model" placeholder="Enter Car Model" matInput required=""/>
+                      </mat-form-field>
+                </div>
+
+             </div>
+             <div class="grid">
+                <div class="split">
+                   <div class="name">Color</div>
+                       <mat-form-field class="field" appearance="outline">
+                          <input type="text" formControlName="color" placeholder="Enter Color" matInput required=""/>
+                      </mat-form-field>
+                   </div>
+
+                <div class="split">
+                      <div class="name">Car image</div>
+                      <mat-form-field class="field" appearance="outline">
+                          <input type="text" formControlName="chassis" placeholder="Chassis Number" matInput required=""/>
+                      </mat-form-field>
+                </div>
+
+             </div>
+
+
+             <div class="grid">
+                <div class="split">
+                   <div class="name">Rent Amount</div>
+                       <mat-form-field class="field" appearance="outline">
+                          <input type="text" formControlName="amount" placeholder="Amount" matInput required=""/>
+                      </mat-form-field>
+                   </div>
+
+                <div class="split">
+                      <div class="name">Status</div>
+                      <mat-form-field class="field" appearance="outline">
+                          <input type="text" formControlName="status" placeholder="status" matInput required=""/>
+                      </mat-form-field>
+                </div>
+
+             </div>
+
+
+
+                <div *ngIf="this.selectedRow == ''">
+                    <button class="btn" (click)="addCar()" [disabled]="carForm.invalid"
+                    mat-flat-button >Save</button>
+                </div>
+
+                <div *ngIf="this.selectedRow != ''">
+                    <button class="btn" (click)="editCar()" [disabled]="carForm.invalid"
+                    mat-flat-button >Save</button>
+                </div>
+            </form>
+        <!-- </mat-card-content> -->
+    <!-- </mat-card> -->
+</div>
+
+

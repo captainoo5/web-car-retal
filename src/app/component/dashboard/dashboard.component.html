@@ -1,0 +1,188 @@
+
+ <div class="header">
+  <span class="top-header">Dashboard</span>
+</div>
+
+
+<div class="card-wrap">
+ <div class="card-1">
+  <div class="content">
+    <div class="text">
+  <span>Available cars</span><br>
+  <span>12/16</span>
+</div>
+<div>
+  <mat-icon class="mat-18">car_rental</mat-icon>
+
+</div>
+ </div>
+</div>
+
+ <div class="card-2">
+  <div>
+    <span>Customer</span><br>
+    <span>28</span>
+  </div>
+  <div>
+    <mat-icon class="mat-18">people</mat-icon>
+  </div>
+   </div>
+
+   <div class="card-3">
+    <div>
+      <span>Transaction</span><br>
+      <span>Rs.57690</span>
+    </div>
+    <div>
+      <mat-icon class="mat-18">payment</mat-icon>
+    </div>
+     </div>
+
+
+     <div class="card-4">
+      <div>
+        <span>Completed Rentals</span> <br>
+        <span>10</span>
+      </div>
+      <div>
+        <mat-icon class="mat-18">checkbox</mat-icon>
+      </div>
+       </div>
+
+
+</div>
+
+
+<div class="statistics">
+
+  <div class="sat-wrap">
+
+  <div class="wrapper">
+    <div class="sat-card">
+     <div class="top">
+      <span class="text">income</span>
+      <button class="btn">Today</button>
+     </div>
+     <div>
+      #96503.00
+     </div>
+     <div class="border"></div>
+     <p>compared to #79320.00 yesterday</p>
+     <p>last week </p>
+    </div>
+  </div>
+
+  <div class="sat-card">
+    <div class="top">
+     <span class="text">Expences</span>
+     <button class="btn">Today</button>
+    </div>
+    <div>
+     #56503.00
+    </div>
+    <div class="border"></div>
+    <p>compared to #12320.00 yesterday</p>
+    <p>last week </p>
+   </div>
+
+
+  </div>
+
+
+   <div class="sat-card-3">
+    <div class="top">
+      <span class="text">Hire vs cancle</span>
+      <button class="btn">Today</button>
+    </div>
+    <div id="chart">
+    </div>
+    <div class="break-down">
+      <ul>
+        <li>Total hired = 54%</li>
+        <li>Total canceled = 20%</li>
+        <li>Total  Pending = 26%</li>
+      </ul>
+    </div>
+   </div>
+
+
+ </div>
+
+
+ <div>
+  <table mat-table style="width:90%; margin: 0 auto;" [dataSource]="listData">
+
+
+    <ng-container matColumnDef="name" >
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="user" >
+        <th mat-header-cell *matHeaderCellDef> Driver </th>
+        <td mat-cell *matCellDef="let element"> {{element.user}} </td>
+      </ng-container>
+
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Earning</th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef>Phone Number</th>
+        <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+      </ng-container>
+
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="number">
+      <th mat-header-cell *matHeaderCellDef>plate Number </th>
+      <td mat-cell *matCellDef="let element"> {{element.number}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="car">
+       <th mat-header-cell *matHeaderCellDef>No. of Cars </th>
+       <td mat-cell *matCellDef="let element"> {{element.car}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef > Status </th>
+        <td mat-cell *matCellDef="let element" >
+          <div [ngClass]="{ yellow: element.status =='INACTIVE', green: element.status =='ACTIVE'}">
+            <span>{{element.status}} </span>
+          </div>
+
+        </td>
+    </ng-container>
+
+
+    <!-- Symbol Column -->
+      <ng-container matColumnDef="icon">
+          <th mat-header-cell *matHeaderCellDef>
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item >
+                  Edit
+                </button>
+                <button *ngIf="element.status =='INACTIVE' " mat-menu-item >
+                  Activate
+                  </button>
+                  <button *ngIf="element.status =='ACTIVE' " mat-menu-item >
+                  Deactivate
+                  </button>
+              </mat-menu>
+         </td>
+
+        </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+ </div>

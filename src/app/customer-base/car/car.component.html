@@ -1,0 +1,33 @@
+<div>
+    <nav class="Navbar" navbar-expand-lg navbar-dark bg-dark>
+    
+        <div class="navbar-collapes" >
+            
+             &nbsp; &nbsp;
+              <div class="user-name">Muhammad Tahir</div> &nbsp; &nbsp;
+              <div class="img-bar"> 
+                <img class="top-img" src="assets/img/pic.jpg" alt="">
+              </div>
+    
+        </div>
+    </nav>
+    
+    <router-outlet></router-outlet>
+  </div>
+  <div class="container">
+   <div class="card-wrap">
+ 
+<div class="card-wrap">
+  <div class="card" *ngFor="let card of cards">
+    <img class="car" [src]="card.img" alt="">
+    <div class="details-wrap">
+      <div class="details">
+        <span class="details">{{card.name}}</span>
+        <span class="details">#{{card.amount | number}}/day</span>
+     </div>  
+     <div class="btn-wrap">
+        <button class="btn" (click)="rentNow(card)">Rent now</button>
+     </div>
+    </div>
+  </div>
+</div>      

@@ -1,0 +1,88 @@
+<div >
+    <mat-tab-group class="container-wrap" style=" margin: 0 auto; margin-top: 10px;">
+        <mat-tab label="Profile"> 
+            <div class="container">
+                <div class="img-wrap">
+                    <img class="top-img" src="assets/img/pic.jpg" alt="">
+                <div class="top-btn">    
+                    <button class="btn1" >Edit Photo </button>
+                    <button class="btn2" >Delete</button>
+                </div>    
+                </div>
+
+            </div>
+
+        <div class="form-container">
+            <form  name="form" [formGroup] ="passwordForm">
+                <div class="name">
+                  Full  Name <br>
+                    <mat-form-field class="field" appearance="outline">
+                        <input formControlName="name" placeholder="Full Name"  matInput required=""/>
+                    </mat-form-field>
+                </div>
+                <div class="name">
+                    Email <br>
+                    <mat-form-field class="field" appearance="outline">
+                        <input formControlName="email" placeholder="Enter Email" matInput required=""/>
+                    </mat-form-field>
+                </div>
+                <div class="name">
+                     ID <br>
+                    <mat-form-field class="field" appearance="outline">
+                        <input formControlName="id" placeholder="Valid ID"  matInput required=""/>
+                    </mat-form-field>
+                </div>
+
+                <div >
+                    <button class="btn" color="primary"  [disabled]="passwordForm.invalid"
+                    mat-flat-button (click)="password()" >Save profile</button>
+                </div>
+    
+    
+            </form>
+        </div>
+        </mat-tab>
+        <mat-tab label="Change Password"> 
+           
+     <div class="form-container">
+              
+          <form class="form" [formGroup] ="passwordForm">
+            <div name="loginForm">
+               <span>Old password</span>  <br>
+                <mat-form-field class="field" appearance="outline">
+                    <input formControlName="oldpassword" placeholder="Enter password" matInput [type]="hide? 'password' : 'text'" required>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria.label]="'Hide password'" [attr.aria.press]="'hide'">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div>
+             <span> New password </span><br>
+                <mat-form-field class="field" appearance="outline">
+                    <input formControlName="newpassword" placeholder="Enter password" matInput [type]="hide1? 'password' : 'text'" required>
+                    <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria.label]="'Hide password'" [attr.aria.press]="'hide1'">
+                        <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div>
+            <span> Comfirm password</span>  <br>
+                <mat-form-field class="field" appearance="outline">
+                    <input formControlName="confirmpassword" placeholder="Enter password" matInput [type]="hide2? 'password' : 'text'" required>
+                    <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria.label]="'Hide password'" [attr.aria.press]="'hide2'">
+                        <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div >
+                <button class="btn" color="primary"  [disabled]="passwordForm.invalid"
+                mat-flat-button (click)="password()" >Save password</button>
+            </div>
+
+        </form>
+    </div>
+        </mat-tab>
+        
+     </mat-tab-group>
+      
+</div>

@@ -1,0 +1,52 @@
+.mat-card{
+    max-width: 400px;
+    margin: 1px auto;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header{
+    text-align: left;
+}
+.name {
+    width: 365px;
+}
+.field{
+    width: 365px;
+}
+.condition{
+    text-align: left;
+}
+.last-link-wrap{
+    text-decoration: none;
+    text-align: center;
+}    
+.last-link{
+    text-decoration: none;
+    text-align: center;
+    color: blue;
+    cursor: pointer;
+}
+.check-box{
+    color: white;
+    background-color:#048d5f;
+}
+.btn{
+    background-color: #048d5f;
+    color: #fff;
+    width: 92%;
+    text-align: center;
+}
+.logo-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    margin: 1px auto;
+    // height: 20vh;
+    border-radius: 50%;
+}

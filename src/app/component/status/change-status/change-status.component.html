@@ -1,0 +1,28 @@
+<div class="container">
+
+    <div *ngIf="this.selectedRow != ''" class="header">
+        <div>Change Status</div>
+        <button mat-icon-button color="warn" (click)="close()" >
+            <mat-icon>close</mat-icon>
+        </button>    
+    </div>
+
+
+    <div class="top">Update Status</div>
+    <mat-form-field class="drop-wraper" style="width:100% ;" appearance="outline">
+        <mat-select [(ngModel)]="status">
+          <mat-option value="FAULTY">Faulty</mat-option>
+          <mat-option value="RESERVED">Reserved</mat-option>
+          <mat-option value="ACTIVE">Active</mat-option>
+          <mat-option value="INACTIVE">Inactive</mat-option>
+          <!-- <mat-option value="two">Second option</mat-option> -->
+          <!-- <mat-option value="two">Second option</mat-option> -->
+        </mat-select>
+    </mat-form-field>
+  
+    <div *ngIf="this.selectedRow != ''">
+        <button class="btn"  [disabled]="" (click)="changeStatus()"
+        mat-flat-button >Change Status</button>
+    </div>
+
+</div>

@@ -1,0 +1,47 @@
+<div class="container">
+    <div>
+        <img class="logo-wrap" src="assets/img/logo4.png" alt="">
+     </div>
+    <mat-card>
+        <mat-card-content>
+            <div class="header">
+                <h2>Registration</h2>
+            </div>
+            <form name="RegForm" [formGroup] ="RegistrationForm">
+                <div class="name">
+                 <span>Name</span>
+                    <mat-form-field class="field" appearance="outline">
+                        <input formControlName="name" placeholder="Full name"  matInput required=""/>
+                    </mat-form-field>
+                </div>
+                <div class="name">
+                    <span>Email</span>
+                    <mat-form-field class="field" appearance="outline">
+                        <input formControlName="email" placeholder="Enter email" matInput required=""/>
+                    </mat-form-field>
+                </div>
+                <div class="name">
+                     <span>ID</span>
+                    <mat-form-field class="field" appearance="outline">
+                        <input formControlName="id" placeholder="Valid ID"  matInput required=""/>
+                    </mat-form-field>
+                </div>
+                <div class="name">
+                 <span>Password</span>
+                    <mat-form-field class="field" appearance="outline">
+                        <input formControlName="password" placeholder="Enter password" matInput [type]="hide? 'password' : 'text'" required>
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria.label]="'Hide password'" [attr.aria.press]="'hide'">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+                <div class="condition">
+                    <input class="checkbox" type="checkbox" color="green" required> I accept all terms & condition
+                </div>
+                <button class="btn"[disabled]="RegistrationForm.invalid" 
+                mat-flat-button (click)="login()">Register</button>
+                <div class="last-wrap">Alredy have an account? <span class="last-link" (click)="logIn()">Log in</span></div>
+            </form>
+        </mat-card-content>
+    </mat-card>    
+</div>
